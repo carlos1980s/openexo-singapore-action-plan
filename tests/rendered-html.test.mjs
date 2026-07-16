@@ -21,13 +21,18 @@ test("server-renders the action plan", async () => {
   const html = await response.text();
   assert.match(html, /<title>OpenExO Singapore — 30-Day Banking Launch Plan<\/title>/i);
   assert.match(html, /One market/);
-  assert.match(html, /Start with four/);
   assert.match(html, /Your 30-day action board/);
   assert.match(html, /The ask to Salim/);
   assert.match(html, /UOB/);
   assert.match(html, /OCBC/);
   assert.match(html, /DBS/);
   assert.match(html, /HSBC/);
+  assert.match(html, /Four bank pursuit files/);
+  assert.match(html, /Lee Zhu Kuang/);
+  assert.match(html, /Melvyn Low/);
+  assert.match(html, /Derrick Goh/);
+  assert.match(html, /Ashmita Acharya/);
+  assert.doesNotMatch(html, /Do not use Standard Chartered/);
 });
 
 test("does not ship the starter preview", async () => {
