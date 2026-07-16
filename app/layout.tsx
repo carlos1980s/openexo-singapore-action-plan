@@ -3,8 +3,19 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "OpenExO Singapore — 30-Day Banking Launch Plan",
-  description: "A focused 90-day market test to turn OpenExO 3.0 into one Singapore banking pilot.",
+  description: "Four banks, eight decision-makers and a 30-day route to one lighthouse pilot.",
   icons: { icon: "/favicon.svg" },
+  openGraph: {
+    title: "OpenExO Singapore — Banking Launch Plan",
+    description: "Four banks, eight decision-makers and a 30-day route to one lighthouse pilot.",
+    images: ["https://carlos1980s.github.io/openexo-singapore-action-plan/og.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "OpenExO Singapore — Banking Launch Plan",
+    description: "Four banks, eight decision-makers and a 30-day route to one lighthouse pilot.",
+    images: ["https://carlos1980s.github.io/openexo-singapore-action-plan/og.png"],
+  },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

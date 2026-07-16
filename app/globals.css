@@ -110,3 +110,43 @@ h2 { font-size: clamp(42px, 5.5vw, 76px); line-height: .95; letter-spacing: -.05
   .step { grid-template-columns: 54px 1fr 34px; }.stepCopy strong { font-size: 20px; }.week { font-size: 18px; }
   .messageCard { margin-left: 10px; padding: 38px 22px 26px; }.messageCard > p { font-size: 21px; }
 }
+
+.pursuits { display: grid; gap: 26px; }
+.pursuit { border: 1px solid var(--line); background: white; }
+.pursuit > header { display: grid; grid-template-columns: 70px 220px 1fr; align-items: center; gap: 24px; padding: 30px; border-bottom: 1px solid var(--line); }
+.pursuit > header > span { font: 400 28px Georgia, serif; color: var(--blue); }
+.pursuit small { font-size: 10px; font-weight: 800; letter-spacing: .13em; color: var(--blue); }
+.pursuit > header h3 { font-size: 52px; letter-spacing: -.055em; margin: 3px 0 0; }
+.pursuit > header > p { max-width: 460px; margin: 0 0 0 auto; font: 22px/1.35 Georgia, serif; }
+.pursuitGrid { display: grid; grid-template-columns: 1fr 1fr; }
+.pursuitGrid > div { padding: 28px 30px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); min-height: 160px; }
+.pursuitGrid > div:nth-child(even) { border-right: 0; }
+.pursuitGrid > div > p { font-size: 14px; line-height: 1.62; margin: 18px 0 0; }
+.people { display: flex; flex-direction: column; }
+.people > a { display: flex; justify-content: space-between; gap: 20px; padding: 16px 0; border-bottom: 1px solid var(--line); }
+.people > a:first-of-type { margin-top: 8px; }
+.people > a:last-child { border-bottom: 0; }
+.people a b { font-size: 15px; }
+.people a span { font-size: 12px; color: #52606c; text-align: right; }
+.moves { grid-column: 1 / -1; border-right: 0 !important; min-height: auto !important; }
+.moves ol { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; padding: 0; list-style: none; counter-reset: moves; margin: 20px 0 0; }
+.moves li { counter-increment: moves; font-size: 14px; line-height: 1.55; padding-left: 38px; position: relative; }
+.moves li::before { content: counter(moves); position: absolute; left: 0; top: 0; width: 24px; height: 24px; display: grid; place-items: center; background: var(--ink); color: white; font-size: 11px; font-weight: 800; }
+
+@media (max-width: 860px) {
+  .pursuit > header { grid-template-columns: 45px 1fr; }
+  .pursuit > header > p { grid-column: 2; margin: 0; }
+  .pursuitGrid { grid-template-columns: 1fr; }
+  .pursuitGrid > div { border-right: 0; }
+  .moves { grid-column: auto; }
+  .moves ol { grid-template-columns: 1fr; gap: 18px; }
+}
+
+@media (max-width: 520px) {
+  .pursuit > header { padding: 22px; grid-template-columns: 34px 1fr; gap: 12px; }
+  .pursuit > header h3 { font-size: 42px; }
+  .pursuit > header > p { font-size: 18px; }
+  .pursuitGrid > div { padding: 23px 22px; }
+  .people > a { flex-direction: column; gap: 4px; }
+  .people a span { text-align: left; }
+}
