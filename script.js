@@ -1,0 +1,4 @@
+const key="openexo-sg-plan",buttons=[...document.querySelectorAll(".steps button")],count=document.querySelector("#count"),bar=document.querySelector("#bar");let done=JSON.parse(localStorage.getItem(key)||"[false,false,false,false]");
+function render(){const total=done.filter(Boolean).length;count.textContent=`${total}/4`;bar.style.width=`${total*25}%`;buttons.forEach((button,i)=>{button.classList.toggle("done",done[i]);button.querySelector("i").textContent=done[i]?"✓":""})}
+buttons.forEach((button,i)=>button.addEventListener("click",()=>{done[i]=!done[i];localStorage.setItem(key,JSON.stringify(done));render()}));
+document.querySelector("#copy").addEventListener("click",async({currentTarget:button})=>{await navigator.clipboard.writeText(document.querySelector("#note").textContent);button.textContent="Copied ✓";setTimeout(()=>button.textContent="Copy message ↗",1600)});render();
